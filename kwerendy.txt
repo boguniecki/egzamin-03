@@ -1,0 +1,6 @@
+SELECT `informacja`, `wart_min`, `wart_max` FROM `bmi` 
+INSERT INTO `wynik`(`bmi_id`, `data_pomiaru`, `wynik`) VALUES (3,'2020-05-10',27)
+ALTER TABLE `wynik` ADD FOREIGN KEY (`bmi_id`) REFERENCES `bmi`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+SELECT wynik.wynik, wynik.data_pomiaru,bmi.informacja FROM wynik JOIN bmi ON bmi.id = wynik.bmi_id 
+
+SELECT `wart_min`, `wart_max` FROM `bmi` WHERE `informacja` = 'nadwaga' 
